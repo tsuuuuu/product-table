@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2'
 
 
 @Component({
@@ -40,8 +41,9 @@ export class AddProductComponent implements OnInit {
 
 
     this.http.post('https://www.getwayautomacao.com.br/teste-angular/api/produtos/salvarProduto', body).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+      (response) => Swal.fire('Sucesso na gravação!', 'O Id registrado foi:' + response, 'success'),
+      (error) => Swal.fire('Erro ' + error.status, ' Mensagem: ' + error.error.title, 'error')
+      //Swal.fire('Erro ' + error.status + ' Mensagem: ' + error.error.title)
     )
   }
 
