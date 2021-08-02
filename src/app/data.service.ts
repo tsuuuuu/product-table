@@ -14,8 +14,12 @@ export class DataService {
     return this.httpClient.post(`${this.APIurl}/buscarProdutos`, {
       "paginacao": {
         "paginaAtual": 1,
-        "itensPorPagina": 30
+        "itensPorPagina": 100
       }
     });
   }
+
+  public salvarProduto(dados) {
+    return this.httpClient.post(`${this.APIurl}/salvarProduto`, { dados })
+  };
 }

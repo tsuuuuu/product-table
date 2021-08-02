@@ -17,8 +17,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Covid19Component } from './covid19/covid19.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material';
-//import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatButtonModule } from '@angular/material/button';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
     CounterComponent,
     FetchDataComponent,
     ProductTableComponent,
-    Covid19Component
+    Covid19Component,
+    AddProductComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,6 +40,7 @@ import { MatButtonModule } from '@angular/material/button';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'product-table', component: ProductTableComponent },
       { path: 'covid19', component: Covid19Component },
+      { path: 'add-product', component: AddProductComponent }
     ]),
     MatTableModule,
     MatPaginatorModule,
@@ -45,8 +48,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    //MatTableExporterModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
