@@ -19,7 +19,7 @@ export class DataService {
     });
   }
 
-  public salvarProduto(dados) {
-    return this.httpClient.post(`${this.APIurl}/salvarProduto`, { dados })
-  };
+  public apagarProduto(id) {
+    return this.httpClient.delete(`${this.APIurl}/excluirProduto/${id}`)
+  }
 }

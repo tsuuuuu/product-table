@@ -1,3 +1,4 @@
+<h1>Produtos cadastrados:</h1>
 <mat-form-field>
   <mat-label>Filtrar</mat-label>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Brahma">
@@ -23,11 +24,23 @@
       <td mat-cell *matCellDef="let row">{{row.preco}}</td>
     </ng-container>
 
+    <!-- Edit Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row"><button type="button" class="btn btn-outline-secondary">Editar</button></td>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="apagar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row"><button (click)="deleteMe(row.id)" type="button" class="btn btn-outline-danger">Apagar</button></td>
+    </ng-container>
+
     <!-- Date Column -->
     <!--<ng-container matColumnDef="data">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
-      <td mat-cell *matCellDef="let row">{{row.data}}</td>
-    </ng-container>-->
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
+    <td mat-cell *matCellDef="let row">{{row.data}}</td>
+  </ng-container>-->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

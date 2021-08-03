@@ -14,7 +14,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { Covid19Component } from './covid19/covid19.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +28,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CounterComponent,
     FetchDataComponent,
     ProductTableComponent,
-    Covid19Component,
     AddProductComponent
   ],
   imports: [
@@ -39,7 +37,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'product-table', component: ProductTableComponent },
-      { path: 'covid19', component: Covid19Component },
       { path: 'add-product', component: AddProductComponent }
     ]),
     MatTableModule,

@@ -43,7 +43,6 @@ export class AddProductComponent implements OnInit {
     this.http.post('https://www.getwayautomacao.com.br/teste-angular/api/produtos/salvarProduto', body).subscribe(
       (response) => Swal.fire('Sucesso na gravação!', 'O Id registrado foi:' + response, 'success'),
       (error) => Swal.fire('Erro ' + error.status, ' Mensagem: ' + error.error.title, 'error')
-      //Swal.fire('Erro ' + error.status + ' Mensagem: ' + error.error.title)
     )
   }
 
